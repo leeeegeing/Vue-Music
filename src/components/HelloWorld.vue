@@ -1,7 +1,7 @@
 <!--
  * @Author: 李剑颖
  * @Date: 2020-12-25 16:30:40
- * @LastEditTime: 2020-12-29 17:43:48
+ * @LastEditTime: 2020-12-30 15:12:38
  * @LastEditors: Please set LastEditors
  * @Description: 
  * @FilePath: \vue-axios\src\components\HelloWorld.vue
@@ -10,27 +10,50 @@
   <div class="hello">
     <div>获取歌曲详情</div>
     <button @click="getSongUrl">点击</button>
+    <van-button type="primary" @click="show = !show">弹出</van-button>
+    <!-- 用户内容 -->
+    <van-popup
+      v-model="show"
+      position="right"
+      :style="{
+        width: '30%',
+        height: '100%'
+      }"
+    >内容</van-popup>
   </div>
 </template>
 
 <script>
+import { Button, Toast, Popup} from 'vant'
 import httpRequest from 'api/index'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
+  components: {
+    [Button.name]: Button,
+    [Toast.name]: Toast,
+    [Popup.name]: Popup
+  },
+  data () {
+    return {
+      show: false
+    }
+  },
   methods: {
     getSongUrl () {
       console.log('cc')
-      let data = {
-        id: 33894312
-      }
-      httpRequest.music.songUrl(data)
-        .then(res => {
-          console.log('res', res)
-        })
-    }
+      Toast('点击结算')
+      // let data = {
+      //   id: 33894312
+      // }
+      // httpRequest.music.songUrl(data)
+      //   .then(res => {
+      //     console.log('res', res)
+      //   })
+    },
+    // 弹出层
   }
 }
 </script>
