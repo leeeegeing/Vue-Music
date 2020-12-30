@@ -1,17 +1,17 @@
 <!--
  * @Author: 李剑颖
  * @Date: 2020-12-25 16:30:40
- * @LastEditTime: 2020-12-29 17:05:48
+ * @LastEditTime: 2020-12-30 16:52:04
  * @LastEditors: Please set LastEditors
  * @Description: 入口文件
  * @FilePath: \vue-axios\src\App.vue
 -->
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div> -->
     <router-view/>
   </div>
 </template>
